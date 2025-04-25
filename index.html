@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadia Hossain | Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+     html {
+    scroll-behavior: smooth;
+  }
+    :root {
+      --bg-color: #f5f7fa;               
+--text-color: #1f2937;            
+--card-bg: #ffffff;
+--accent-color: #3b82f6;           
+--header-bg: linear-gradient(to right, #0f172a, #1e40af);  
+    }
+    body.dark-mode {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;         
+  --card-bg: #1e293b;
+  --accent-color: #60a5fa;    
+  --header-bg: linear-gradient(to right, #1e293b, #0f172a);
+}
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+    .navbar {
+      background: var(--header-bg);
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+    }
+    .navbar-brand, .nav-link, .btn-toggle {
+      color: white !important;
+      font-weight: 500;
+    }
+    .btn-toggle {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+.navbar {
+  background: var(--header-bg);
+}
+.navbar-brand, .nav-link {
+  color: #e2e8f0 !important;
+}
+
+    .section-box {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, background 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .section-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-box:hover {
+      transform: scale(1.01);
+    } 
+
+    .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 20px;
+   
+    color: #1e293b;
+  }
+  .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 25px;
+  border-left: 5px solid var(--accent-color);
+  padding-left: 20px;
+}
+
+a { color: var(--accent-color); }
+a:hover { text-decoration: underline; color: #1d4ed8; }
+
+.card:hover, .section-box:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+  body.dark-mode .hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+  }
+
+  .hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #3d7bff, #081339);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--text-color);
+  animation:
+    typing 4s steps(44, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  width: 44ch;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 34.5ch; } /* 47 characters in your sentence */
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--text-color); }
+}
+
+body:not(.dark-mode) .hero-content p {
+  border-right: 2px solid #1e293b; /* Dark navy */
+}
+  .profile-img-large {
+  width: 350px;
+  height: 350px;
+    border-radius: 50%;
+    border: 6px solid white;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+
+  section {
+  margin-top: 70px;
+}
+.hero-content {
+  animation: fadeInUp 1.5s ease-in-out;
+  z-index: 2;
+  position: relative;
+}
+body.dark-mode .hero-content h1 {
+  background: linear-gradient(to right, #ffffff, #919191);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .profile-img-large {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .equal-img {
+    height: auto;
+    max-height: 400px;
+  }
+}
+.equal-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.typing-effect {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--text-color);
+  width: 0;
+  animation: typing 4s steps(47, end) forwards, blink-caret 0.75s step-end infinite;
+}
+body.dark-mode .card-title,
+body.dark-mode .section-title {
+  color: #f8fafc;
+}
+
+.hero img {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+.section-box {
+  transition: all 0.8s ease-in-out;
+}
+.hero {
+  position: relative;
+  z-index: 1;
+}
+    a { color: #2563eb; }
+    a:hover { text-decoration: underline; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">   
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Sadia Hossain</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <button class="btn btn-toggle ms-3" onclick="toggleDarkMode()">🌗</button>
+      </div>
+    </div>
+  </nav>
+  <header class="hero container py-5" style="max-width: 1200px; display: flex; align-items: center; gap: 40px;">
+    <div class="hero-content" style="flex: 1;">
+      <h1 style="font-size: 4rem; font-weight: 700; -webkit-background-clip: text; color: transparent;">
+        Sadia Hossain
+      </h1>
+      <p class="typing-effect">Data Analyst | Learning, Analyzing, Innovating</p>
+
+      <div class="mt-4 d-flex flex-wrap align-items-center gap-4" style="font-size: 1.25rem;">
+        <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" class="text-decoration-none text-primary">
+          <i class="bi bi-linkedin me-1"></i> LinkedIn
+        </a>
+        <a href="https://github.com/SadiaHossain21" target="_blank" class="text-decoration-none text-primary">
+          <i class="bi bi-github me-1"></i> GitHub
+        </a>
+        <a href="https://kaggle.com/sadia21121" target="_blank" class="text-decoration-none text-primary">
+          <i class="bi bi-bar-chart me-1"></i> Kaggle
+        </a>
+      </div>
+    </div>
+    <!-- Image Section -->
+    <div style="flex-shrink: 0;">
+      <img src="your-profile-image.jpg" alt="Sadia Hossain" class="profile-img-large mt-3">
+    </div>
+  </header>
+  
+  
+  <div class="container">
+    <div class="row">
+      <section id="about-education" class="mt-5">
+        <div class="row">
+          <!-- About Me -->
+          <div class="col-md-6">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-box">
+              <p>Hello! I'm <strong>Sadia Hossain</strong>, a dedicated Data Analyst driven by a curiosity for uncovering patterns and stories hidden in data. My journey began in software engineering, but I soon discovered a deep passion for analytics—where logic meets creativity, and data drives real change.</p>
+              <p>Currently pursuing a master's in Data Science at Aston University, I specialize in transforming complex datasets into actionable insights, building machine learning models, and creating powerful visualizations.</p>
+              <p>From internships like Pathao to award-winning team projects, I've tackled challenges in areas like health diagnostics, anomaly detection, and full-stack web development. My toolkit includes Python, SQL, R, Power BI, and frameworks like TensorFlow and scikit-learn.</p>
+              <p>I’m most energized when solving meaningful problems—especially those at the intersection of technology, human behavior, and social impact.</p>
+            </div>
+          </div>
+      
+          <!-- Education -->
+          <div class="col-md-6">
+            <h2 class="section-title">Education</h2>
+            <div class="section-box">
+              <p><strong>MSc in Data Science</strong><br>
+                <em>Aston University, UK — Jan 2025 (Ongoing)</em><br>
+                Currently deepening my knowledge in machine learning, statistical modeling, and big data engineering. My coursework includes predictive analytics, AI, and cloud-based data architecture, with an emphasis on solving real-world problems through data-driven solutions.
+              </p>
+      
+              <p><strong>BSc in Computer Science & Engineering</strong><br>
+                <em>East West University, BD — Jan 2020 to Jan 2024</em><br>
+                <div class="d-flex gap-4 flex-wrap">
+                  <div><strong>Major:</strong> Software Engineering</div>
+                  <div><strong>GPA:</strong> 3.40 / 4.00</div>
+                </div>
+                
+              </p>
+      
+              <p>As part of my undergrad journey, I developed <strong>SpareBasket</strong> — an innovative mobile app for sharing surplus food in the community, promoting sustainability and reducing waste.</p>
+              <ul class="d-flex gap-4 list-unstyled mb-2">
+                <li class="d-flex align-items-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="20" alt="Flutter" class="me-1"> Flutter
+                </li>
+                <li class="d-flex align-items-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="20" alt="Dart" class="me-1"> Dart
+                </li>
+                <li class="d-flex align-items-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="20" alt="Firebase" class="me-1"> Firebase
+                </li>
+              </ul>              
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-box">
+        <strong>Data Analyst Intern – Pathao</strong><br>
+        <em>Dhaka, Bangladesh | Mar 2024 – Sept 2024</em>
+        <ul>
+          <li>Analyzed customer engagement trends using Python and SQL for a retail analytics platform.</li>
+          <li>Developed Power BI dashboards to visualize KPIs and improve stakeholder communication.</li>
+          <li>Automated data cleaning processes, reducing preparation time by 30%.</li>
+          <li>Worked closely with data scientists to validate hypotheses and support business decisions.</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="section-box">
+        <strong>Earthquake Anomaly Detection</strong><br>
+        Time series analysis and ML pipeline to detect seismic anomalies.<br>
+        <a href="https://www.kaggle.com/code/sadia21121/earthquake-anomaly-detection" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View on Kaggle</a>
+      </div>
+      <div class="section-box">
+        <strong>Type 2 Diabetes Risk Prediction</strong><br>
+        Classification model using clinical and lifestyle data.<br>
+        <a href="https://www.kaggle.com/code/sadia21121/type-2-diabetes-risk-prediction" target="_blank" class="btn btn-outline-primary btn-sm mt-2">View on Kaggle</a>
+      </div>
+      <div class="section-box">
+        <strong>FIFA World Cup 2022 Website</strong><br>
+        Team-built site with front/backend dev, awarded Best Project.<br>
+        <a href="https://github.com/SadiaHossain21/fifa-worldcup-2022" target="_blank"  class="btn btn-outline-primary btn-sm mt-2">View on GitHub</a><br>
+        <em>🏆 Best Project Award</em>
+        <div class="row mt-3 g-2">
+          <div class="col-md-6">
+            <img src="award-image-1.jpg" alt="Award Certificate" class="img-fluid rounded equal-img">
+          </div>
+          <div class="col-md-6">
+            <img src="award-image-2.jpg" alt="Award Group" class="img-fluid rounded equal-img">
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        .equal-img {
+          width: 100%;
+          height: 500px;
+          object-fit: cover;
+        }
+      </style>      
+<section id="publications">
+  <h2 class="section-title">Publications</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="section-box h-100">
+        <strong>Enhancing Early Diagnosis and Classification of Type 2 Diabetes with Retinopathy Using ML</strong><br>
+        <em>7ICOIACT 2024 – November 20, 2024</em>
+        <p class="mt-2">This paper explores the integration of machine learning and image processing to detect diabetic retinopathy and improve early diagnosis of Type 2 diabetes.</p>
+        <a href="https://ieeexplore.ieee.org/document/10912889" target="_blank" class="btn btn-outline-primary btn-sm">Read Publication</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="section-box h-100">
+        <strong>Strategies for Effective Malware Analysis Using Machine Learning</strong><br>
+        <em>COMPAS 2024 – September 25, 2024</em>
+        <p class="mt-2">This study presents advanced machine learning techniques for malware detection and classification, enhancing system security through data-driven methods.</p>
+        <a href="https://ieeexplore.ieee.org/document/10797025" target="_blank" class="btn btn-outline-primary btn-sm">Read Publication</a>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="Interactive%20Cares.jpg" class="card-img-top" alt="Interactive Cares Certificate">
+              <div class="card-body">
+                <h5 class="card-title">Data Analytics & Power BI</h5>
+                <p class="card-text">Interactive Cares – June 2024</p>
+                <a href="Interactive%20Cares.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="7thicoiact2024-certificate.jpg" class="card-img-top" alt="7ICOIACT Certificate">
+              <div class="card-body">
+                <h5 class="card-title">7ICOIACT 2024</h5>
+                <p class="card-text">Machine Learning & Image Processing</p>
+                <a href="7thicoiact2024-certificate.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="Paper%20ID%20-%20366.jpg" class="card-img-top" alt="COMPAS Certificate">
+              <div class="card-body">
+                <h5 class="card-title">COMPAS 2024</h5>
+                <p class="card-text">Malware Analysis Using ML</p>
+                <a href="Paper%20ID%20-%20366.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4" style="font-size: 1.25rem; font-family: 'Segoe UI', sans-serif;">
+          <div class="col">
+            <div class="section-box h-100 d-flex align-items-start gap-3">
+              <i class="bi bi-code-slash fs-2 text-primary"></i>
+              <div><strong>Programming</strong><br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="24"> Python<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" width="24"> SQL<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" width="24"> R
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="section-box h-100 d-flex align-items-start gap-3">
+              <i class="bi bi-globe fs-2 text-success"></i>
+              <div><strong>Web</strong><br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="24"> HTML<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="24"> CSS<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" width="24"> JS<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="24"> PHP
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="section-box h-100 d-flex align-items-start gap-3">
+              <i class="bi bi-tools fs-2 text-warning"></i>
+              <div><strong>Tools</strong><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" width="24"> Power BI<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="24"> Git<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="24"> VS Code<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="24"> Jupyter
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="section-box h-100 d-flex align-items-start gap-3">
+              <i class="bi bi-cpu fs-2 text-danger"></i>
+              <div><strong>ML/AI</strong><br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" width="24"> scikit-learn<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="24"> TensorFlow<br>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="24"> PyTorch
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <section id="contact" class="py-5 fade-in-section">
+        <div class="container text-center">
+          <h2 class="section-title mb-4">Let's Connect!!</h2>
+          <div class="card shadow border-0 mx-auto animate-up" style="max-width: 600px;">
+            <div class="card-body py-4">
+              <p class="fs-5 mb-4">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+              <div class="d-flex justify-content-center gap-4 mb-3">
+                <a href="mailto:sadiahossain@gmail.com" class="text-decoration-none text-dark">
+                  <i class="bi bi-envelope-fill me-2"></i> sadiahossain@gmail.com
+                </a>
+              </div>
+              <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://linkedin.com/in/YOUR_LINK" class="btn btn-outline-primary rounded-pill d-flex align-items-center gap-2 px-3" target="_blank">
+                  <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/SadiaHossain21" class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 px-3" target="_blank">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="https://kaggle.com/sadia21121" class="btn btn-outline-secondary rounded-pill d-flex align-items-center gap-2 px-3" target="_blank">
+                  <i class="bi bi-bar-chart"></i> Kaggle
+                </a>
+              </div>
+              <a href="Sadia_Hossain_CV.pdf" class="btn btn-primary d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill" download>
+                <i class="bi bi-file-earmark-arrow-down"></i> Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <style>
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.visible {
+          opacity: 1;
+          transform: none;
+        }
+      </style>
+      <script>
+        const fadeSection = document.querySelector('.fade-in-section');
+        const fadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        fadeObserver.observe(fadeSection);
+      </script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">      
+  </div>
+
+  <footer class="text-center py-4 text-muted">
+    &copy; 2025 Sadia Hossain. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    const sections = document.querySelectorAll('.section-box');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+  <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: 0;"></div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": { "enable": true, "value_area": 1000 }
+        },
+        "color": { "value": "#1e3a8a" },
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": true
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" }
+        },
+        "modes": {
+          "grab": { "distance": 150, "line_linked": { "opacity": 0.4 } }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>  
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('shadow-sm', window.scrollY > 10);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+  <script>smoothscroll.polyfill();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
