@@ -10,6 +10,17 @@
      html {
     scroll-behavior: smooth;
   }
+body.dark-mode .btn-outline-dark,
+body.dark-mode .btn-outline-secondary {
+  color: #ffffff;       
+  border-color: #ffffff;
+}
+
+body.dark-mode .btn-outline-dark i,
+body.dark-mode .btn-outline-secondary i {
+  color: var(--text-color);
+}
+
     body.dark-mode .card-title,
 body.dark-mode .card-text {
   color: var(--text-color);
@@ -211,7 +222,7 @@ body.dark-mode .hero-content h1 {
   overflow: hidden;
   border-right: 2px solid var(--text-color);
   width: 0;
-  animation: typing 4s steps(47, end) forwards, blink-caret 0.75s step-end infinite;
+  animation: typing 4s steps(49, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
 .hero img {
