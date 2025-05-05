@@ -24,6 +24,7 @@
   --accent-color: #60a5fa;    
   --header-bg: linear-gradient(to right, #1e293b, #0f172a);
 }
+    
     body {
       background: var(--bg-color);
       color: var(--text-color);
@@ -39,6 +40,11 @@
       color: white !important;
       font-weight: 500;
     }
+    body.dark-mode .card-title,
+body.dark-mode .section-title {
+  color: #f8fafc;
+}
+
     .btn-toggle {
   background-color: var(--accent-color);
   color: #fff;
